@@ -6,7 +6,7 @@ local p = 1
 local vars = {}
 local labels = {}
 
-local valid_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:,;=+-#>"
+local valid_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.:,;=+#>"
 
 -- check for labels first
 
@@ -53,10 +53,8 @@ while p <= #code do
             if vars[code:sub(p - 1, p - 1)] ~= nil then
                 if code:sub(p + 1, p + 1):match("%d") ~= nil then
                     vars[code:sub(p - 1, p - 1)] = code:sub(p + 1, p + 1)
-                elseif code:sub(p + 1, p + 1):match("%u") ~= nil then
-                    vars[code:sub(p - 1, p - 1)] = vars[code:sub(p + 1, p + 1)]
                 else
-                    print("ERR: You can only set the variables to be single digit numbers or the values of other variables")
+                    print("ERR: You can only set the variables to be single digit numbers")
                     os.exit(1)
                 end
             else
@@ -103,15 +101,6 @@ while p <= #code do
             print("ERR: You can only operate variables")
             os.exit(1)
         end
-    elseif code:sub(p, p) == "-" then
-        if code:sub(p - 1, p - 1):match("%u") ~= nil and code:sub(p + 1, p + 1):match("%u") ~= nil then
-            vars[code:sub(p - 1, p - 1)] = (vars[code:sub(p - 1, p - 1)] - vars[code:sub(p + 1, p + 1)]) % 256
-            vars[code:sub(p + 1, p + 1)] = 0
-        else
-            print("ERR: You can only operate variables")
-            os.exit(1)
-        end
-
         -- jumping to a label if eq. to zero
     elseif code:sub(p, p) == "=" then
         if code:sub(p - 1, p - 1):match("%u") ~= nil then
@@ -153,6 +142,5 @@ while p <= #code do
     p = p + 1
 end
 
--- ":C:A#9:B#A+B#A+BC#AB#A+B#A+C#A;B:D#7C-D#3;C#A;A;AC+D;C:E#7:F#E+F#E+F#6B-E;B-F#6B-F#9;BA+F#2A+F#3;A;C+F#6;C-F#8;C-F#1;CB+F;B" for hello world
 -- ":Z:A>a;A,AZ=a" is the cat program
--- ":Z:Y#1:X:A#7:B#A+B#A+B#A+B:C#7A-C:D#A,X-AX=aD-Y;D.>a;DZ=a" is the truth machine (this took sooo long (mainly cuz i coded the interpreter wrong)) (also anything else is treated as 0)
+-- i'm not doing the truth machine and hello world for this version you can do it
