@@ -1,6 +1,7 @@
 # eul (extremely unoriginal language)
 
 this is my first attempt at creating a language (please don't look at how many if elseifs i used)
+also this is made in 2 days
 
 ## syntax
 
