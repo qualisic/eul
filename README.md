@@ -24,7 +24,7 @@ also this is made in 2 days
 - "-" does not exist (you can only do addition)
 
 ## example programs
-- hello world: ":C:A#9:B#A+B#A+BC#AB#A+B#A+C#A;B:D#7C-D#3;C#A;A;AC+D;C:E#7:F#E+F#E+F#6B-E;B-F#6B-F#9;BA+F#2A+F#3;A;C+F#6;C-F#8;C-F#1;CB+F;B"
+- hello world: ":A#9:B#A+B#A+B:C#AB#A+B#A+C#A;B:D#7C-D#3;C#A;A;AC+D;C:E#7:F#E+F#E+F#6B-E;B-F#6B-F#9;BA+F#2A+F#3;A;C+F#6;C-F#8;C-F#1;CB+F;B"
 - truth machine: ":Z:Y#1:X:A#7:B#A+B#A+B#A+B:C#7A-C:D#A,X-AX=aD-Y;D.>a;DZ=a"
 - cat: ":Z:A>a;A,AZ=a"
 - cat works on both versions (i think, i didn't test it on the evil ver.), hello world and truth machine only work on the normal version
