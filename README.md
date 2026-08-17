@@ -6,6 +6,7 @@ also this is made in 2 days
 ## syntax
 
 ### declaring variables -> :A
+- the variables go up to 255 and down to 0, if it passes it loops over
 ### declaring labels -> >a
 - variables have to be uppercase, labels have to be lowercase
 ### setting values of variables -> A#5 or A#B
@@ -16,7 +17,6 @@ also this is made in 2 days
 - print the character that corresponds to the ascii value that's in the variable
 ### operations -> A+B and A-B
 - stores the result in the first variable, resets the second one
-- the variables go up to 255 and down to 0, if it passes it loops over
 ### jumping to label if variable is equal to 0 -> A=a
 
 ## evil mode differences
@@ -27,4 +27,4 @@ also this is made in 2 days
 - hello world: ":C:A#9:B#A+B#A+BC#AB#A+B#A+C#A;B:D#7C-D#3;C#A;A;AC+D;C:E#7:F#E+F#E+F#6B-E;B-F#6B-F#9;BA+F#2A+F#3;A;C+F#6;C-F#8;C-F#1;CB+F;B"
 - truth machine: ":Z:Y#1:X:A#7:B#A+B#A+B#A+B:C#7A-C:D#A,X-AX=aD-Y;D.>a;DZ=a"
 - cat: ":Z:A>a;A,AZ=a"
-- cat works on both versions, hello world and truth machine only work on the normal version
+- cat works on both versions (i think, i didn't test it on the evil ver.), hello world and truth machine only work on the normal version
