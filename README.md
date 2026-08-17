@@ -1,6 +1,6 @@
 # eul (extremely unoriginal language)
 
-this is my first attempt at creating a language (please don't look at how many if elseifs i used)
+this is my first attempt at creating a language (please don't look at how many if elseifs i used)\
 also this is made in 2 days
 
 ## syntax
@@ -16,6 +16,7 @@ also this is made in 2 days
 - print the character that corresponds to the ascii value that's in the variable
 ### operations -> A+B and A-B
 - stores the result in the first variable, resets the second one
+- the variables go up to 255 and down to 0, if it passes it loops over
 ### jumping to label if variable is equal to 0 -> A=a
 
 ## evil mode differences
