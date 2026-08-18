@@ -18,6 +18,7 @@ also this is made in 2 days
 ### operations -> A+B and A-B
 - stores the result in the first variable, resets the second one
 ### jumping to label if variable is equal to 0 -> A=a
+### terminating the program -> .
 
 ## evil mode differences
 - "#" does not let you set the values of variables to other variables (only single digits)
