@@ -1,6 +1,13 @@
 -- code:sub(p, p) for current character
 
-local code = arg[1]
+local file = io.open(arg[1], "r")
+if not file then
+    print("ERR: Cannot read file")
+	os.exit(1)
+end
+
+local code = file:read("a")
+file:close()
 local p = 1
 
 local vars = {}
@@ -152,7 +159,3 @@ while p <= #code do
     -- increment at the end
     p = p + 1
 end
-
--- ":C:A#9:B#A+B#A+BC#AB#A+B#A+C#A;B:D#7C-D#3;C#A;A;AC+D;C:E#7:F#E+F#E+F#6B-E;B-F#6B-F#9;BA+F#2A+F#3;A;C+F#6;C-F#8;C-F#1;CB+F;B" for hello world
--- ":Z:A>a;A,AZ=a" is the cat program
--- ":Z:Y#1:X:A#7:B#A+B#A+B#A+B:C#7A-C:D#A,X-AX=aD-Y;D.>a;DZ=a" is the truth machine (this took sooo long (mainly cuz i coded the interpreter wrong)) (also anything else is treated as 0)

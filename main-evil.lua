@@ -1,6 +1,13 @@
 -- code:sub(p, p) for current character
 
-local code = arg[1]
+local file = io.open(arg[1], "r")
+if not file then
+    print("ERR: Cannot read file")
+	os.exit(1)
+end
+
+local code = file:read("a")
+file:close()
 local p = 1
 
 local vars = {}
@@ -142,5 +149,4 @@ while p <= #code do
     p = p + 1
 end
 
--- ":Z:A>a;A,AZ=a" is the cat program
 -- i'm not doing the truth machine and hello world for this version you can do it
