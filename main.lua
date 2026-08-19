@@ -63,7 +63,8 @@ while p <= #code do
                 elseif code:sub(p + 1, p + 1):match("%u") ~= nil then
                     vars[code:sub(p - 1, p - 1)] = vars[code:sub(p + 1, p + 1)]
                 else
-                    print("ERR: You can only set the variables to be single digit numbers or the values of other variables")
+                    print(
+                        "ERR: You can only set the variables to be single digit numbers or the values of other variables")
                     os.exit(1)
                 end
             else
@@ -148,14 +149,16 @@ while p <= #code do
         end
         ::continue::
 
+        -- terminating the program
+    elseif code:sub(p, p) == "." then
+        os.exit(0)
+
         -- checking for invalid char.s
     elseif not valid_chars:match(code:sub(p, p)) then
         print("ERR: Invalid character")
         os.exit(1)
-        -- terminating the program
-    elseif code:sub(p, p) == "." then
-        os.exit(0)
     end
+    
     -- increment at the end
     p = p + 1
 end

@@ -137,14 +137,16 @@ while p <= #code do
         end
         ::continue::
 
+        -- terminating the program
+    elseif code:sub(p, p) == "." then
+        os.exit(0)
+
         -- checking for invalid char.s
     elseif not valid_chars:match(code:sub(p, p)) then
         print("ERR: Invalid character")
         os.exit(1)
-        -- terminating the program
-    elseif code:sub(p, p) == "." then
-        os.exit(0)
     end
+    
     -- increment at the end
     p = p + 1
 end
